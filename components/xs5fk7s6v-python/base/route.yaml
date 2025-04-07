@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: xs5fk7s6v-python
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: xs5fk7s6v-python 
+  name: xs5fk7s6v-python
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: xs5fk7s6v-python
+    weight: 100 
